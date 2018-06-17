@@ -57,7 +57,8 @@ NB: l’objectif est de pouvoir générer automatiquement la table des matières
 
 |motif|TEI P5|HTML5|
 |-----|------|-----|
-|paragraphe|[`p`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-p.html) [`@rend="center"` si centré]||
+|paragraphe|[`p`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-p.html) [`@rend="center"` si centré]|`p`|
+|analyse (résumé)|[`argument`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-argument.html)|`summary`|
 |citation|[`quote`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-quote.html)|`blockquote`|
 |vers|[`l`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-l.html)|`p`|
 |strophe|`<l/>`|`<br/>`|
