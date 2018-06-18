@@ -60,7 +60,7 @@ NB: l’objectif est de pouvoir générer automatiquement la table des matières
 |paragraphe|[`p`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-p.html) [`@rend="center"` si centré]|`p`|
 |analyse (résumé)|[`argument`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-argument.html)|`summary`|
 |citation|[`quote`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-quote.html)|`blockquote`|
-|vers|[`l`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-l.html)|`p`|
+|vers|[`l`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-l.html) [`@n="\d+"` si numéroté]|`p`|
 |strophe|`<l/>`|`<br/>`|
 |tableau|[`table`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-table.html), `row`, `cell`|`table`, `tr`, `td`|
 |liste|[`list`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-list.html), `item`|`ul`, `li`|
@@ -71,7 +71,7 @@ NB: l’objectif est de pouvoir générer automatiquement la table des matières
 * NB1. On ne conserve ni les en-têtes ni les pieds de page.
 * NB2. Pour marquer les strophes, inscrire un vers vide, `<l/>`.
 * NB3. **Notes de bas de page** : traitement *inline* des blocs de notes (voir plus bas).
-
+* NB4. Pour les citations, supprimer le guillemet ouvrant en début de ligne.
 
 ```xml
 <div>
@@ -130,4 +130,32 @@ NB. Saisir les majuscules en MAJUSCULES.
 
 ```xml
 <p>… M. de La Salle ; de <pb n="93" facs="http://gallica.bnf.fr/iiif/ark:/12148/bpt6k6561127c/f103/full/full/0/native.jpg"/>belles tapisseries de Flandre…</p>
+```
+
+# Exemples (compliqués)
+
+## Note avec paragraphe (`p`) et une citation en vers (`quote`, `l`)
+
+[![dihf, blocs](img/bpt6k65349759_f85.jpg)](http://gallica.bnf.fr/ark:/12148/bpt6k65349759/f85.image)
+
+```xml
+<p>…La jeunesse, à qui cette coiffure convenoit si bien<note n="5">
+  <p>Jean de Coucy, poète du XIII<sup>e</sup> siècle, dans son poëme le Chemin de la Vaillance, fait dire au personnage de la Jeunesse :</p>
+  <quote>
+    <l>« Je fais les instrumens sonner,</l>
+    <l>Chappeaulx de plusieurs fleurs donner. »</l>
+  </quote>
+  <p>De la Rue, <i>Essais historiques sur les Bardes, les Jongleurs et les Trouvères</i>. Caen, 1834, tom. III, p. 299.</p>
+</note>, raffina même…</p>
+```
+
+## Note en colonnes et résumé en marge
+[![dihf, blocs](imG/bpt6k110089k_f23.jpg)](http://gallica.bnf.fr/ark:/12148/bpt6k110089k/f23.image)
+
+```xml
+<p><argument>1093. Voyage de Pierre l’Ermite en Syrie.</argument>Vegnivano<note n="1">Au ms.
+  <i>Tegnivano</i>.</note> da diversi paesi peregrini a Hierusalem, et tra li altri venne
+  un chiamato Piero l’Heremita<note n="5">Guillaume de Tyr, I, xi, p.32.</note>, perchè
+  habitò in l’hermo<note n="6">Au ms. <i>l’herino</i>.</note>. Costui era picol homo di
+  persona et mal formato, ma era di maraveglioso ingegnio et di gran core…</p>
 ```
