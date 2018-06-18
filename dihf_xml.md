@@ -59,6 +59,7 @@ NB: l’objectif est de pouvoir générer automatiquement la table des matières
 |-----|------|-----|
 |paragraphe|[`p`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-p.html) [`@rend="center"` si centré]|`p`|
 |analyse (résumé)|[`argument`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-argument.html)|`summary`|
+|mention de date|[`dateline`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-dateline.html)|`time`|
 |citation|[`quote`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-quote.html)|`blockquote`|
 |vers|[`l`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-l.html) [`@n="\d+"` si numéroté]|`p`|
 |strophe|`<l/>`|`<br/>`|
@@ -72,6 +73,7 @@ NB: l’objectif est de pouvoir générer automatiquement la table des matières
 * NB2. Pour marquer les strophes, inscrire un vers vide, `<l/>`.
 * NB3. **Notes de bas de page** : traitement *inline* des blocs de notes (voir plus bas).
 * NB4. Pour les citations, supprimer le guillemet ouvrant en début de ligne.
+* NB5. Les mentions de date (`dateline`) apparaissent en tête de `div`.
 
 ```xml
 <div>
@@ -104,8 +106,9 @@ NB: l’objectif est de pouvoir générer automatiquement la table des matières
 </div>
 ```
 
-# Typographie
+# Texte et typographie
 
+Difficulté. Les ouvrages sont souvent **multilingues** (français, latin) et les transcriptions en langues anciennes, rarement normalisées (ancien et moyen français, ancien italien, latin médiéval, etc.). Cette spécificité interdit souvent le recours à la correction automatique.
 
 |motif|TEI P5|HTML5|
 |-----|------|-----|
@@ -125,6 +128,11 @@ NB. Saisir les majuscules en MAJUSCULES.
 <p>......suite du texte<note>Texte de la note de bas de page, éventuellement structurée en paragraphes</note> suite du texte......</p>
 ```
 
+* NB1: une note peut courrir sur plusieurs pages.
+* NB2: dans certaines éditions (correspondances notamment), la numérotation des notes reprend (à 1) à chaque nouveau document édité :
+
+[![dihf, blocs](img/bpt6k62182323_f358.jpg)](http://gallica.bnf.fr/ark:/12148/bpt6k62182323/f358.image)
+
 ## Saut de page
 [`pb`](http://www.tei-c.org/release/doc/tei-p5-doc/fr/html/ref-pb.html). Il convient d’enregistrer à chaque saut de page, la pagination imprimée et lien vers l’image.
 
@@ -134,7 +142,7 @@ NB. Saisir les majuscules en MAJUSCULES.
 
 # Exemples (compliqués)
 
-## Note avec paragraphe (`p`) et une citation en vers (`quote`, `l`)
+## note avec paragraphe (`p`) et une citation en vers (`quote`, `l`)
 
 [![dihf, blocs](img/bpt6k65349759_f85.jpg)](http://gallica.bnf.fr/ark:/12148/bpt6k65349759/f85.image)
 
@@ -149,8 +157,20 @@ NB. Saisir les majuscules en MAJUSCULES.
 </note>, raffina même…</p>
 ```
 
-## Note en colonnes et résumé en marge
-[![dihf, blocs](imG/bpt6k110089k_f23.jpg)](http://gallica.bnf.fr/ark:/12148/bpt6k110089k/f23.image)
+## div avec titre, résumé et mention de date (+note)
+[![dihf, blocs](img/bpt6k6221328n_f50.jpg)](http://gallica.bnf.fr/ark:/12148/bpt6k6221328n/f50.image)
+
+```xml
+<div>
+  <head>XXXIII.</head>
+  <argument>Cyrographum inter nostrum et Blesense cenobium, de censu terre de Porrardi<note n="2">Sic ; sed legend. <i>de Porta Morardi</i>.</note> et de censu excluse de Groslu continens pactum.</argument>
+  <dateline>1101-1129.</dateline>
+  <p>« Notum sit omnibus tam presentibus quam etiam his qui nobis successuri sunt, quod fratres Carnotensis cenobii beati Petri clausulum…</p>
+</div>
+```
+
+## note en colonnes et résumé en marge
+[![dihf, blocs](img/bpt6k110089k_f23.jpg)](http://gallica.bnf.fr/ark:/12148/bpt6k110089k/f23.image)
 
 ```xml
 <p><argument>1093. Voyage de Pierre l’Ermite en Syrie.</argument>Vegnivano<note n="1">Au ms.
