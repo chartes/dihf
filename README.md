@@ -5,7 +5,7 @@ Initiée par François Guizot et publiée à partir de 1835 par le CTHS, la coll
 
 Le CTHS et l’École des chartes souhaitent mettre à disposition de la communauté des chercheurs ce gisement inédit d’éditions critiques, en mode image (en collaboration avec Gallica, BnF) et sous forme structurée (XML/TEI) sur sa plateforme d’édition de sources historiques.
 
-## Numérisation
+## 1. Numérisation (Scan)
 310 volumes sont déjà accessibles sur Gallica, dont 273 en mode texte.  
 Il reste donc [137 volumes à numériser, répartis en 2 lots](https://github.com/chartes/dihf/blob/master/dihf_scan.tsv) (cf col A, "lot").  
 
@@ -15,7 +15,7 @@ Il reste donc [137 volumes à numériser, répartis en 2 lots](https://github.co
 Format des fichiers : TIFF 300 dpi NDG, compression LZW.  
 Manipulations : enlèvement en une fois sur le site parisien ; massicotage puis reliure des volumes.
 
-## OCR et structuration éditoriale (XML)
+## 2. OCR et structuration éditoriale (XML)
 * Objectif : océriser et restructurer la sous-collection [Première série, Histoire politique](https://github.com/chartes/dihf/blob/master/serie1_histoire-politique.tsv).
 * Volumétrie
   * volumes : 153 (nous excluons les Atlas de la prestation, cf l. 155-162)
