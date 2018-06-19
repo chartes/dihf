@@ -35,7 +35,7 @@ elif sys.argv[1] == "getTxt":
 		for line in f:
 			ark = line.strip()
 			txtURL = ark+".texteBrut"
-			txtName = ark.rsplit('/', 1)[-1]+".txt"
+			txtName = ark.rsplit('/', 1)[-1]+".htm"
 			r = requests.get(txtURL)
 			#dirty boy!
 			texte = r.text.encode('utf-8')
